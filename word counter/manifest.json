@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+      "name": "counter",
+      "version": "1.0.0",
+      "action": {
+        "default_popup": "counter.html",
+        "default_title": "counter"
+      },
+      "content_scripts": [
+        {
+        "matches": ["<all_urls>"],
+        "js": ["counterjs.js"]
+      }
+    ]
+    }
+    
