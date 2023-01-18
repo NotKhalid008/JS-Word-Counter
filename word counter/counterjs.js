@@ -1,14 +1,18 @@
 var button = document.getElementById("submit");
 var answer = document.getElementById("answer");
+clear = document.getElementById("clear")
 
 button.addEventListener("click", function() {
-    var input = document.getElementById("inptf").value;
-    var wordCount = input.split(" ").length;
-    answer.innerHTML = wordCount;
+    var input = document.getElementById("inptf").value.trim();
+    if (input === "") {
+        answer.innerHTML = "enter text";
+    } else {
+        var wordCount = input.split(" ").length;
+        wordCount--;
+        answer.innerHTML = wordCount;
+    }
 });
-var clearButton = document.getElementById("clear");
-
-clearButton.addEventListener("click", function() {
+clear.addEventListener("click", function() {
     document.getElementById("inptf").value = "";
-    answer.innerHTML = "";
+    document.getElementById("answer").innerHTML = "";
 });
